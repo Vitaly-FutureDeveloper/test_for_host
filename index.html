@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+	<link rel="preload" href="css/style.css" as="style">
+	<link rel="stylesheet" href="css/style.css">
+
+	<link rel="icon" href="img/favicon.png" type="image/x-icon">
+	<title>Test HOST Company</title>
+</head>
+<body>
+	<header class="main-header">
+		<div class="logo-wrap">
+			<a href="/">
+				<img src="img/logo.png" alt="Логотип сайта" class="logo">
+			</a>
+		</div>
+		<nav>
+			<ul class="nav-list">
+				<li class="nav-list__item">
+					<a href="/">Главная</a>
+				</li>
+			</ul>
+		</nav>
+	</header>
+
+	<main class="page-main">
+		<h1 class="title">Тестовое задание для ХОСТ</h1>
+
+		<section class="organizations">
+			<form action="api/org-form" method="GET" class="org-form">
+				<div class="org-form__selects">
+					<h3>Критерий запроса</h3>
+					<div class="select-wrap">
+						<select name="organization" class="js-select-org org-form__select">
+							<option value="0">Организация</option>
+							<option value="1">Lada</option>
+							<option value="2">Audi</option>
+							<option value="3">Toyota</option>
+						</select>
+
+						<select name="cooperator" class="js-select-cooperators org-form__select" disabled>
+							<option value=""></option>
+						</select>
+					</div>
+				</div>
+
+				<div class="org-form__check-functions">
+					<label class="org-form__label-func">
+						<input class="js-checkbox" type="checkbox" name="function" value="10">
+						<span>Директор</span>
+					</label>
+					<label class="org-form__label-func">
+						<input class="js-checkbox" type="checkbox" name="function" value="20">
+						<span>Инженер</span>
+					</label>
+					<label class="org-form__label-func">
+						<input class="js-checkbox" type="checkbox" name="function" value="30">
+						<span>Менеджер</span>
+					</label>
+				</div>
+				
+				<div class="org-form__btns">
+					<button type="reset" class="js-reset org-form__btn">Очистить</button>
+					<button type="submit" class="js-output org-form__btn">Добавить</button>
+				</div>
+
+				<output class="js-output-block output">
+
+				</output>
+			</form>
+		</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	</main>
+
+
+	<script src="scripts/jquery3.6.0.min.js"></script>
+	<script src="scripts/main.js"></script>
+</body>
+</html>
