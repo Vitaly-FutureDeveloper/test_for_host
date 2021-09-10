@@ -47,22 +47,27 @@ $(document).ready(function() {
 	function appendWorker(evt){
 		evt.preventDefault();
 
-		const output = document.querySelector('.js-output-block');
-		const cooperators_select =
-			document.querySelector('.js-select-cooperators');
-		const id_select = getChoosedIdOrganization(cooperators_select);
+		try {
+			const output = document.querySelector('.js-output-block');
+			const cooperators_select =
+				document.querySelector('.js-select-cooperators');
+			const id_select = getChoosedIdOrganization(cooperators_select);
 
-		let filteredArray = getFinedArrayId(WORKERS, id_select);
-		let filteredOrg = getFinedArrayId(ORGANIZATIONS, filteredArray[0][2]);
-		let filteredFunc = getFinedArrayId(FUNC_WORKERS, filteredArray[0][3]);
+			let filteredArray = getFinedArrayId(WORKERS, id_select);
+			let filteredOrg = getFinedArrayId(ORGANIZATIONS, filteredArray[0][2]);
+			let filteredFunc = getFinedArrayId(FUNC_WORKERS, filteredArray[0][3]);
 
-		let array = [];
-		array.push(filteredArray[0][1]);
-		array.push(filteredOrg[0][1]);
-		array.push(filteredFunc[0][1]);
-		array = [[...array]];
+			let array = [];
+			array.push(filteredArray[0][1]);
+			array.push(filteredOrg[0][1]);
+			array.push(filteredFunc[0][1]);
+			array = [[...array]];
 
-		render(array, getOutputComponent, output);
+			render(array, getOutputComponent, output);
+
+		} catch (e) {
+			console.log('Нужно сначала выбрать организацию, или другая ошибка ', e);
+		}
 	}
 
 	function clearWorker(evt) {
@@ -104,8 +109,6 @@ $(document).ready(function() {
 				return check;
 			});
 		}
-		// console.log(filtered);
-		// console.log(filtered_check);
 
 		return filtered_check;
 	}
